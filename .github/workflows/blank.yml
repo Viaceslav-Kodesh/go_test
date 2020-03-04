@@ -1,11 +1,9 @@
-name: Godzilla
+name: Viaceslav-Kodesh/Godzilla@master
 on: [push]
 jobs:
   container-job:
     runs-on: ubuntu-latest
-    steps:
-    - uses: Viaceslav-Kodesh/Godzilla@master
-      with: 
+    env: 
         authUrl: ${{ secrets.OS_AUTH_URL }}
         projectName: ${{ secrets.OS_USERNAME }}
         projectDomainName: ${{ secrets.PROJECT_DOMAIN_NAME }}
