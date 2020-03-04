@@ -1,9 +1,13 @@
-name: Viaceslav-Kodesh/Godzilla@master
+name: Godzilla
 on: [push]
 jobs:
   container-job:
+    name: Implement Chaos
     runs-on: ubuntu-latest
-    env: 
+    steps:
+    - name: OpenStack Chaos Action
+      uses: Viaceslav-Kodesh/Godzilla@master
+      with:
         authUrl: ${{ secrets.OS_AUTH_URL }}
         projectName: ${{ secrets.OS_USERNAME }}
         projectDomainName: ${{ secrets.PROJECT_DOMAIN_NAME }}
